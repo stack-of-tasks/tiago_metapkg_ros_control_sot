@@ -1,0 +1,20 @@
+gains:
+
+
+  head_1_joint:                   {p: 1,  d: 0.0, i: 0, i_clamp: 5, torque_clamp: 8}
+  head_2_joint:                   {p: 1,  d: 0.0, i: 0, i_clamp: 1.5, torque_clamp: 8}
+
+  torso_1_joint:                  {p: 30, d: 0, i: 0, i_clamp: 10, torque_clamp: 100}
+  torso_2_joint:                  {p: 30, d: 0, i: 0, i_clamp: 10, torque_clamp: 100}
+
+  arm_1_joint: &arm_1_gains {p: 20, d: 0, i: 0,  i_clamp: 14, torque_clamp: 150}
+  arm_2_joint: &arm_2_gains {p: 100, d: 0, i: 0, i_clamp: 14, torque_clamp: 150}
+  arm_3_joint: &arm_3_gains {p: 50, d: 0, i: 0,  i_clamp: 9, torque_clamp: 100}
+  arm_4_joint: &arm_4_gains {p: 50, d: 0, i: 0,  i_clamp: 9, torque_clamp: 100}
+  arm_5_joint: &arm_5_gains {p: 50,  d: 0, i: 0, i_clamp: 5, torque_clamp: 50}
+  arm_6_joint: &arm_6_gains {p: 30,  d: 0, i: 0, i_clamp: 3, torque_clamp: 30}
+  arm_7_joint: &arm_7_gains {p: 30,  d: 0, i: 0, i_clamp: 3, torque_clamp: 30}
+
+  gripper_left_joint:  {p: 0.002, d: 0, i: 0, i_clamp: 10, torque_clamp: 100}
+  gripper_right_joint: {p: 0.002, d: 0, i: 0, i_clamp: 10, torque_clamp: 100}
+

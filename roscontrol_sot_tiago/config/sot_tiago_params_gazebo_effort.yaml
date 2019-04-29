@@ -1,0 +1,11 @@
+sot_controller:
+  libname: libsot-tiago-controller.so
+  simulation_mode: gazebo
+  joint_names: [  torso_1_joint,torso_2_joint,
+    arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_joint,
+    head_1_joint, head_2_joint ]
+  map_rc_to_sot_device: { motor-angles: motor-angles ,
+  joint-angles: joint-angles, velocities: velocities, forces: forces, currents: currents,
+  torques: torques, cmd-joints: control, cmd-effort: control, accelerometer_0: accelerometer_0, gyrometer_0: gyrometer_0 }
+  control_mode: EFFORT
+  dt: 0.001  

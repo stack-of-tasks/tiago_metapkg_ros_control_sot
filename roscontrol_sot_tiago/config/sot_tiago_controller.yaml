@@ -1,0 +1,20 @@
+sot_controller:
+  type: sot_controller/RCSotController
+  joints:
+    - arm_left_1_joint
+    - arm_left_2_joint
+    - arm_left_3_joint
+    - arm_left_4_joint
+    - arm_left_5_joint
+    - arm_left_6_joint
+    - arm_left_7_joint
+    - gripper_joint
+    - head_1_joint
+    - head_2_joint
+    - torso_joint
+
+  left_ft_sensor: left_ankle_ft
+  right_ft_sensor: right_ankle_ft
+  base_imu_sensor: base_imu
+  check_mode: False
+
