@@ -1,7 +1,8 @@
 sot_controller:
-  libname: libsot-tiago-controller.so
-  joint_names: [ torso_joint,
-    arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_joint,
+  libname: libsot-tiago-steel-controller.so
+  joint_names: [ torso_lift_joint,
+    arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint,
+    gripper_left_finger_joint, gripper_right_finger_joint,
     head_1_joint, head_2_joint ]
   map_rc_to_sot_device: { motor-angles: motor-angles ,
   joint-angles: joint-angles, velocities: velocities, forces: forces, currents: currents,
