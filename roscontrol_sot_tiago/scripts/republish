@@ -29,7 +29,7 @@ if publish_root_wrt_odom:
         output_prefix = output_topic.rsplit('/',1)[0] + '/'
     else:
         output_prefix = ""
-    rospy.loginfo("Will publish " + output_prefix + "base_link with respect to " + output_prefix + "odom")
+    rospy.loginfo("Will publish " + output_prefix + "base_footprint with respect to " + output_prefix + "odom")
 
 jointnames =  rospy.get_param("/sot_controller/joint_names")
     
@@ -39,7 +39,7 @@ def jointreceived(jstates):
     time = rospy.Time.now()
     aJS.header.seq = seqnb
     aJS.header.stamp = time
-    aJS.header.frame_id = "base_link"
+    aJS.header.frame_id = "base_footprint"
     aJS.name = jointnames
     aJS.position = jstates.data[6:]
     aJS.velocity = []
@@ -52,7 +52,7 @@ def jointreceived(jstates):
                          tf.transformations.quaternion_from_euler(
                              jstates.data[3], jstates.data[4], jstates.data[5]),
                          time,
-                         output_prefix + "base_link",
+                         output_prefix + "base_footprint",
                          output_prefix + "odom")
 
 def listener():
