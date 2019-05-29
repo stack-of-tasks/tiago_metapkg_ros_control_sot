@@ -4,13 +4,13 @@
 <launch>
   <!-- Which robot are we controlling ? -->
   <arg name="robot" default="tiago" />
-  <arg name="libsot" default="libsot-tiago-controller.so" />   
+  <arg name="libsot" default="libsot-tiago-steel-controller.so" />   
 
   <!-- BTW we are in simulation ? -->
 
    <!-- Load robot model. -->
   <param name="robot_description"
-	 textfile="$(find tiago_data)/urdf/tiago_reduced.urdf" />
+	 textfile="$(find tiago_data)/robots/tiago_steel.urdf" />
 
 
    <!-- Load robot sot params. -->
