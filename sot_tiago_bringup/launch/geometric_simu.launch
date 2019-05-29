@@ -4,7 +4,7 @@
 <launch>
   <!-- Which robot are we controlling ? -->
   <arg name="robot" default="tiago" />
-  <arg name="libsot" default="libsot-tiago-controller.so" />   
+  <arg name="libsot" default="libsot-tiago-steel-controller.so" />
 
   <arg name="sot-launch-prefix" default="" />
 
