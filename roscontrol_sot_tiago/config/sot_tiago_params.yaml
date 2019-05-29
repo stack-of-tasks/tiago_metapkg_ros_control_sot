@@ -8,7 +8,7 @@ sot_controller:
   joint-angles: joint-angles, velocities: velocities, forces: forces, currents: currents,
   torques: torques, cmd-joints: control, cmd-effort: control, accelerometer_0: accelerometer_0, gyrometer_0: gyrometer_0 }
   position_control_init_pos:
-    - name: torso_joint
+    - name: torso_lift_joint
       des_pos: 0.0
     - name: arm_1_joint
       des_pos: 0.25847
@@ -24,7 +24,7 @@ sot_controller:
       des_pos: 0.0
     - name: arm_7_joint
       des_pos: 0.1
-    - name: gripper_joint
+    - name: gripper_finger_joint
       des_pos: 0.034
     - name: head_1_joint
       des_pos: 0.0
