@@ -1,6 +1,6 @@
 <package>
   <name>sot_tiago_bringup</name>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <description>ROS package for Stack of Tasks on Tiago</description>
 
   <maintainer email="ostasse@laas.fr">Olivier Stasse</maintainer>
