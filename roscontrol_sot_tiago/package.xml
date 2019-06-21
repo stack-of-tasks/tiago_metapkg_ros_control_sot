@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>roscontrol_sot_tiago</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>Wrapping Stack-of-tasks for Tiago in ros-control</description>
 
   <!-- Maintainer email --> 
