@@ -1,6 +1,7 @@
 sot_controller:
   libname: libsot-tiago-steel-controller.so
   joint_names: [
+    wheel_left_joint, wheel_right_joint,
     torso_lift_joint,
     arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint,
     head_1_joint, head_2_joint  ]
@@ -10,6 +11,10 @@ sot_controller:
   control: control
   }
   control_mode:
+    wheel_left_joint:
+      ros_control_mode: VELOCITY
+    wheel_right_joint:
+      ros_control_mode: VELOCITY
     torso_lift_joint:
       ros_control_mode: POSITION
     arm_1_joint:
