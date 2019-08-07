@@ -38,5 +38,5 @@ sot_controller:
       ros_control_mode: POSITION
     head_2_joint:
       ros_control_mode: POSITION
-  dt: 0.001
-  jitter: 0.0004
+  dt: 0.01
+  jitter: 0.004
