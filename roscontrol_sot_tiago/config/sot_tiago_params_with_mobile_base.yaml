@@ -1,6 +1,0 @@
-sot_controller:
-  control_mode:
-    wheel_left_joint:
-      ros_control_mode: VELOCITY
-    wheel_right_joint:
-      ros_control_mode: VELOCITY
