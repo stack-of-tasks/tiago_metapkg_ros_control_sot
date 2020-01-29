@@ -3,21 +3,22 @@
   -->
 <launch>
   <!-- Which robot are we controlling ? -->
+  <arg name="use_mobile_base" doc="Whether SoT should control the mobile base"/>
   <arg name="robot" default="tiago" />
   <arg name="libsot" default="libsot-tiago-steel-controller.so" />
 
   <arg name="sot-launch-prefix" default="" />
 
   <include file="$(find sot_tiago_bringup)/launch/geometric_simu_context.launch" >
-    <arg name="robot" value="$(arg robot)" />       
-    <arg name="libsot" value="$(arg libsot)" />
   </include>
+
+  <param name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
 
   <!-- Load Stack of Tasks. -->
   <node machine="geometric_simu_machine" 
         name="node_stack_of_tasks" 
-	pkg="dynamic_graph_bridge"
-	type="geometric_simu"
+        pkg="dynamic_graph_bridge"
+        type="geometric_simu"
         args=" --input-file $(arg libsot)"
         launch-prefix="$(arg sot-launch-prefix)"
 	respawn="true">
