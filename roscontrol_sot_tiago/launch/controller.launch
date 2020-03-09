@@ -2,18 +2,19 @@
   <arg name="use_mobile_base" doc="Whether SoT should control the mobile base"/>
   <arg name="simulation" default="false"/>
 
-  <param if="$(arg simulation)" name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
+  <!-- use mobile base on real robot, not only in simulation -->
+  <param name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
+  <!-- <param if="$(arg simulation)" name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/> -->
 
-  <!-- Sot Controller configuration -->
+<!-- Sot Controller configuration -->
   <rosparam command="load" file="$(find roscontrol_sot_tiago)/config/sot_params.yaml"/>
   <rosparam if="$(arg use_mobile_base)" command="load" file="$(find roscontrol_sot_tiago)/config/sot_params_mobile_base.yaml"/>
   <rosparam if="$(arg use_mobile_base)" command="load" ns="/sot_controller/velocity_control_pd_motor_init" file="$(find roscontrol_sot_tiago)/config/pids_velocity.yaml"/>
   <rosparam command="load" file="$(find roscontrol_sot_tiago)/config/controller.yaml" />
-  
+
   <!-- Spawn walking controller -->
   <node name="sot_controller_spawner"
         pkg="controller_manager" type="spawner" output="screen"
         args="sot_controller" />
 
 </launch>
-
