@@ -2,10 +2,6 @@
      Handle ROS simulation of the SoT.
   -->
 <launch>
-  <!-- Which robot are we controlling ? -->
-  <arg name="robot" default="tiago" />
-  <arg name="libsot" default="libsot-tiago-steel-controller.so" />   
-
   <!-- BTW we are in simulation ? -->
 
    <!-- Load robot model. -->
