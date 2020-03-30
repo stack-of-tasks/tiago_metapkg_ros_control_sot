@@ -2,11 +2,16 @@
      Handle ROS simulation of the SoT.
   -->
 <launch>
-  <!-- BTW we are in simulation ? -->
+  <arg name="end_effector" doc="one of false, pal-gripper, pal-hey5, schunk-wsg"/>
 
    <!-- Load robot model. -->
+  <!--
   <param name="robot_description"
-	 textfile="$(find tiago_data)/robots/tiago_steel.urdf" />
+    textfile="$(find tiago_data)/robots/tiago_steel.urdf" />
+  -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro.py '$(find tiago_description)/robots/tiago.urdf.xacro' end_effector:=$(arg end_effector)"/>
+
 
 
    <!-- Load robot sot params. -->
