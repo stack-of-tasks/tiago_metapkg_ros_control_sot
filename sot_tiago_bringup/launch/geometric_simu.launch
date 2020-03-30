@@ -6,10 +6,12 @@
   <arg name="use_mobile_base" doc="Whether SoT should control the mobile base"/>
   <arg name="robot" default="tiago" />
   <arg name="libsot" default="libsot-tiago-steel-controller.so" />
+  <arg name="end_effector" doc="one of false, pal-gripper, pal-hey5, schunk-wsg"/>
 
   <arg name="sot-launch-prefix" default="" />
 
-  <include file="$(find sot_tiago_bringup)/launch/geometric_simu_context.launch" >
+  <include file="$(find sot_tiago_bringup)/launch/geometric_simu_context.launch">
+    <arg name="end_effector" value="$(arg end_effector)"/>
   </include>
 
   <param name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
