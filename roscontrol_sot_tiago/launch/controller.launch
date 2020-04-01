@@ -2,7 +2,7 @@
   <arg name="use_mobile_base" doc="Whether SoT should control the mobile base"/>
   <arg name="simulation" default="false"/>
 
-  <param if="$(arg simulation)" name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
+  <param name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
 
   <!-- Sot Controller configuration -->
   <rosparam command="load" file="$(find roscontrol_sot_tiago)/config/sot_params.yaml"/>
