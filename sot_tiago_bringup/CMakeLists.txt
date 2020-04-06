@@ -11,23 +11,8 @@ catkin_package()
 
 #setup_project()
 
-INSTALL(
-  FILES 
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
-)
-
-INSTALL(
-  FILES
-  launch/geometric_simu.launch
-  launch/geometric_simu_context.launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-)
-
-INSTALL(
-  FILES
-  sot/tiago.yaml
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/sot
-)
+INSTALL(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 INSTALL(
   FILES
