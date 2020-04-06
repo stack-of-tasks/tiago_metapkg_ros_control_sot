@@ -12,6 +12,7 @@
 
   <include file="$(find sot_tiago_bringup)/launch/geometric_simu_context.launch">
     <arg name="end_effector" value="$(arg end_effector)"/>
+    <arg name="use_mobile_base" value="$(arg use_mobile_base)"/>
   </include>
 
   <param name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
@@ -22,8 +23,7 @@
         pkg="dynamic_graph_bridge"
         type="geometric_simu"
         args=" --input-file $(arg libsot)"
-        launch-prefix="$(arg sot-launch-prefix)"
-	respawn="true">
+        launch-prefix="$(arg sot-launch-prefix)" >
     <param name="/sot/dg/geometric_simu" value="" />
   </node>
 
