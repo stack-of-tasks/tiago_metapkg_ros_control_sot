@@ -13,8 +13,8 @@
   <param name="robot_description"
     command="$(find xacro)/xacro.py '$(find tiago_description)/robots/tiago.urdf.xacro' end_effector:=$(arg end_effector)"/>
 
-  <arg     if="$(arg use_mobile_base) " name="mobile_base_joint_names" value="'wheel_left_joint', 'wheel_right_joint', " />
-  <arg unless="$(arg use_mobile_base) " name="mobile_base_joint_names" value="" />
+  <arg     if="$(arg use_mobile_base)" name="mobile_base_joint_names" value="'wheel_left_joint', 'wheel_right_joint', " />
+  <arg unless="$(arg use_mobile_base)" name="mobile_base_joint_names" value="" />
   <arg if="$(eval arg('end_effector') == 'schunk-wsg')" name="gripper_joint_names" value="'gripper_finger_joint', " />
   <arg if="$(eval arg('end_effector') == 'pal-hey5'  )" name="gripper_joint_names" value="'hand_index_joint', 'hand_mrl_joint', 'hand_thumb_joint', " />
 
