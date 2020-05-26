@@ -1,8 +1,15 @@
 <launch>
   <arg name="use_mobile_base" doc="Whether SoT should control the mobile base"/>
+  <arg name="end_effector" doc="one of false, pal-gripper, pal-hey5, schunk-wsg"/>
   <arg name="simulation" default="false"/>
 
   <param name="/sot_controller/use_mobile_base" value="$(arg use_mobile_base)"/>
+
+  <include file="$(find sot_tiago_bringup)/launch/sot_params.launch">
+    <arg name="end_effector" value="$(arg end_effector)"/>
+    <arg name="use_mobile_base" value="$(arg use_mobile_base)"/>
+  </include>
+
 
   <!-- Sot Controller configuration -->
   <rosparam command="load" file="$(find roscontrol_sot_tiago)/config/sot_params.yaml"/>

@@ -1,0 +1,20 @@
+<!-- -*-xml-*-
+     Set parameters /sot/state_vector_map and /sot_controller/joint_names according to the robot model.
+  -->
+<launch>
+  <arg name="end_effector" doc="one of false, pal-gripper, pal-hey5, schunk-wsg"/>
+  <arg name="use_mobile_base" doc="Whether SoT should control the mobile base"/>
+
+  <arg     if="$(arg use_mobile_base)" name="mobile_base_joint_names" value="'wheel_left_joint', 'wheel_right_joint', " />
+  <arg unless="$(arg use_mobile_base)" name="mobile_base_joint_names" value="" />
+  <arg if="$(eval arg('end_effector') == 'schunk-wsg')" name="gripper_joint_names" value="'gripper_finger_joint', " />
+  <arg if="$(eval arg('end_effector') == 'pal-hey5'  )" name="gripper_joint_names" value="'hand_index_joint', 'hand_mrl_joint', 'hand_thumb_joint', " />
+
+  <!-- Load robot sot params. -->
+  <group ns="sot">
+    <rosparam param="state_vector_map" subst_value="True">[ $(arg mobile_base_joint_names) "torso_lift_joint", "arm_1_joint", "arm_2_joint", "arm_3_joint", "arm_4_joint", "arm_5_joint", "arm_6_joint", "arm_7_joint", $(arg gripper_joint_names) "head_1_joint", "head_2_joint" ]</rosparam>
+  </group>
+  <group ns="sot_controller">
+    <rosparam param="joint_names" subst_value="True">[ $(arg mobile_base_joint_names) "torso_lift_joint", "arm_1_joint", "arm_2_joint", "arm_3_joint", "arm_4_joint", "arm_5_joint", "arm_6_joint", "arm_7_joint", $(arg gripper_joint_names) "head_1_joint", "head_2_joint" ]</rosparam>
+  </group>
+</launch>

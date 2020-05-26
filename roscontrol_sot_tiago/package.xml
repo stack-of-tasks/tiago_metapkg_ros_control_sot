@@ -53,5 +53,6 @@
   <run_depend>cmake_modules</run_depend>
   <run_depend>roscontrol_sot</run_depend>
   <run_depend>controller_interface</run_depend>
+  <run_depend>sot_tiago_bringup</run_depend>
   <!-- The export tag contains other, unspecified, tags -->
 </package>
