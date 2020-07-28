@@ -1,6 +1,6 @@
 <package>
   <name>tiago_metapkg_ros_control_sot</name>
-  <version>1.0.1</version>
+  <version>1.0.5</version>
   <description>A set of packages that include sot-wrapper and tiago sot params .</description>
 
   <maintainer email="olivier.stasse@laas.fr">Olivier Stasse</maintainer>
