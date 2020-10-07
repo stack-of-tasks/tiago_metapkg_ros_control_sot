@@ -30,6 +30,11 @@ sot_controller:
     gripper_finger_joint:
       ros_control_mode: POSITION
 
+    gripper_left_finger_joint:
+      ros_control_mode: POSITION
+    gripper_right_finger_joint:
+      ros_control_mode: POSITION
+
     hand_thumb_joint:
       ros_control_mode: POSITION
     hand_index_joint:
