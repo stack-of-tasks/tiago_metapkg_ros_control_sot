@@ -9,7 +9,7 @@
   <arg unless="$(arg use_mobile_base)" name="mobile_base_joint_names" value="" />
   <arg if="$(eval arg('end_effector') == 'schunk-wsg')" name="gripper_joint_names" value="'gripper_finger_joint', " />
   <arg if="$(eval arg('end_effector') == 'pal-hey5'  )" name="gripper_joint_names" value="'hand_index_joint', 'hand_mrl_joint', 'hand_thumb_joint', " />
-
+  <arg if="$(eval arg('end_effector') == 'pal-gripper')" name="gripper_joint_names" value="'gripper_left_finger_joint', 'gripper_right_finger_joint', " />
   <!-- Load robot sot params. -->
   <group ns="sot">
     <rosparam param="state_vector_map" subst_value="True">[ $(arg mobile_base_joint_names) "torso_lift_joint", "arm_1_joint", "arm_2_joint", "arm_3_joint", "arm_4_joint", "arm_5_joint", "arm_6_joint", "arm_7_joint", $(arg gripper_joint_names) "head_1_joint", "head_2_joint" ]</rosparam>
